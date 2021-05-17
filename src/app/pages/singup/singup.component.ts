@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-singup',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingupComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService:UserService) {
+     
+   };
 
   public user={
     username:"",
@@ -27,7 +30,21 @@ export class SingupComponent implements OnInit {
       return;
     }
 
-    
+
+    //user servuce
+
+    this.userService.addUser(this.user).subscribe(
+      (data)=>{
+        console.log(data)
+        alert("success");
+      },
+      (error)=>{
+
+        console.log(error)
+        alert("somethis went wrong");
+      }
+    )
+
   }
 
 }
