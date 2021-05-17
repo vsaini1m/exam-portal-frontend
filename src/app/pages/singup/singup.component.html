@@ -8,11 +8,13 @@
                 </div>
                 <h1 class="text-center">Register here</h1>
 
-               <form>
+               
+               <form (ngSubmit)="formSubmit()">
                    <!-- username -->
                 <mat-form-field  class="full-width" appearance="outline">
                     <mat-label>User name</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input [(ngModel)]="user.username"
+                    name="username" matInput placeholder="Placeholder">
                     
                     <mat-hint>Enter username here</mat-hint>
                   </mat-form-field>
@@ -20,7 +22,8 @@
                   <!-- password -->
                   <mat-form-field  class="full-width" appearance="outline">
                     <mat-label>User password</mat-label>
-                    <input type="password" matInput placeholder="Placeholder">
+                    <input [(ngModel)]="user.password" type="password"
+                    name="password" matInput placeholder="Placeholder">
                     
                     <mat-hint>Enter password here</mat-hint>
                   </mat-form-field>
@@ -28,7 +31,9 @@
                   <!-- firstname -->
                   <mat-form-field  class="full-width" appearance="outline">
                     <mat-label>User first name</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input
+                    [(ngModel)]="user.firstName"
+                    name="firstName" matInput placeholder="Placeholder">
                     
                     <mat-hint>Enter first name here</mat-hint>
                   </mat-form-field>
@@ -36,7 +41,9 @@
                   <!-- lastname -->
                   <mat-form-field  class="full-width" appearance="outline">
                     <mat-label>User last name</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input 
+                    [(ngModel)]="user.lastName" 
+                    name="lastName" matInput placeholder="Placeholder">
                     
                     <mat-hint>Enter last name here</mat-hint>
                   </mat-form-field>
@@ -44,7 +51,7 @@
                   <!-- email -->
                   <mat-form-field  class="full-width" appearance="outline">
                     <mat-label>User email</mat-label>
-                    <input type="email" matInput placeholder="Placeholder">
+                    <input [(ngModel)]="user.email" name="email" type="email" matInput placeholder="Placeholder">
                     
                     <mat-hint>Enter email here</mat-hint>
                   </mat-form-field>
@@ -52,13 +59,15 @@
                   <!-- phone number -->
                   <mat-form-field  class="full-width" appearance="outline">
                     <mat-label>User phone number</mat-label>
-                    <input type="number" matInput placeholder="Placeholder">
+                    <input type="number" 
+                    [(ngModel)]="user.phone" 
+                    name="phone" matInput placeholder="Placeholder">
                     
                     <mat-hint>Enter phone number here</mat-hint>
                   </mat-form-field>
 
-                  <div class="container text-center">
-                      <button mat-raised-button color="primary">Register</button>
+                  <div class="container text-center" style="margin-bottom:50px">
+                      <button type="submit" mat-raised-button color="primary">Register</button>
                       <button style="margin-left: 20px;" mat-raised-button color="accent">Register</button>
                   </div>
                </form>
