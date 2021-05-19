@@ -1,1 +1,44 @@
-<p>login works!</p>
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                <div class="container text-center" >
+                    <img style="border-radius: 50px;" src="../../../assets/logo.png" alt="logo" width="80" height="80">
+                </div>
+
+                <h3 class="text-center"> Login your account</h3>
+
+
+                              
+                <form>
+                    <!-- username -->
+                 <mat-form-field  class="full-width" appearance="outline">
+                     <mat-label>User name</mat-label>
+                     <input 
+                     name="username" matInput placeholder="Placeholder">
+                     
+                     <mat-hint> Valid user name</mat-hint>
+                   </mat-form-field>
+ 
+                   <!-- password -->
+                   <mat-form-field  class="full-width" appearance="outline">
+                     <mat-label>User password</mat-label>
+                     <input type="password"
+                     name="password" matInput placeholder="Placeholder">
+                     
+                     <mat-hint>Enter password</mat-hint>
+                   </mat-form-field>
+ 
+                   <div class="container text-center mt20" >
+                       <button type="submit" mat-raised-button color="primary">Login account</button>
+                       
+                       <button type="reset" class="ml20" mat-raised-button color="accent">Login account</button>
+                   </div>
+                </form>
+                </mat-card>
+            </div>
+
+        </div>
+    </div>
+</div>

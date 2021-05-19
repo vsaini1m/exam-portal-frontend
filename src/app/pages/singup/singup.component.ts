@@ -47,7 +47,7 @@ export class SingupComponent implements OnInit {
       (error)=>{
 
         console.log(error)
-        Swal.fire('Opps somethins went wrong !! ','Registration Faild'+error.,'error');
+        Swal.fire('Opps somethins went wrong !! ','Registration Faild','error');
        // this._snackBar.open("Registration Faild.","ok");
       }
     )

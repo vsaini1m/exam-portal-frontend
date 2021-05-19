@@ -5,3 +5,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .text-center{
     text-align: center;
 }
+
+.ml20{
+    margin-left: 20px !important;
+}
+
+
+.mr20{
+    margin-top: 20px !important;
+}
+
+
+.mt20{
+    margin-top: 20px !important;
+}
+
+
+.mb20{
+    margin-bottom: 20px !important;
+}
