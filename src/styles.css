@@ -24,3 +24,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mb20{
     margin-bottom: 20px !important;
 }
+body{
+	background-color: #e2e2e2;
+}
