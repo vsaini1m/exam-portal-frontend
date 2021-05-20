@@ -15,6 +15,6 @@ export class UserService {
    * addUser
    */
   public addUser(user:any) {
-    return this.http.post(`${baseUrl}/saini_vinit/exam/api/user//register`,user)
+    return this.http.post(`${baseUrl}/user/`,user)
   }
 }
