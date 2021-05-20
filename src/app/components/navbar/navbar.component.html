@@ -4,16 +4,33 @@
     </a>
     <span routerLink="/" style="cursor: pointer;">Exam portal</span>
     <span class="example-spacer"></span>
+   
     <a 
+    *ngIf="!loginService.isUserLoggedIn()"
     [routerLink]="'/singup'" 
     mat-icon-button class="example-icon favorite-icon " aria-label="Example icon-button with heart icon">
         <mat-icon>add_business</mat-icon>
     </a>
     <a 
+    *ngIf="!loginService.isUserLoggedIn()"
     [routerLink]="'/login'" 
     mat-icon-button class="example-icon favorite-icon " aria-label="Example icon-button with heart icon">
       <mat-icon>login</mat-icon> 
     </a>
+    <a 
+    *ngIf="loginService.isUserLoggedIn()"
     
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    {{loginService.getUserDetailsFromLocalStorage().username}}  
+    
+    </a>
+    
+    <a 
+    *ngIf="loginService.isUserLoggedIn()"
+    (click)="logout()"
+    mat-icon-button class="example-icon favorite-icon " style="margin-left: 50px;" aria-label="Example icon-button with heart icon">
+    
+     <mat-icon>logout</mat-icon>
+    </a>
   </mat-toolbar>
   
