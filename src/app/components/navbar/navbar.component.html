@@ -6,31 +6,34 @@
     <span class="example-spacer"></span>
    
     <a 
-    *ngIf="!loginService.isUserLoggedIn()"
-    [routerLink]="'/singup'" 
+    *ngIf="!isUserLoggedIn"
+    [routerLink]="'/singup'"  mat-button
     mat-icon-button class="example-icon favorite-icon " aria-label="Example icon-button with heart icon">
-        <mat-icon>add_business</mat-icon>
+        <!-- <mat-icon>add_business</mat-icon> -->
+        register         
     </a>
     <a 
-    *ngIf="!loginService.isUserLoggedIn()"
-    [routerLink]="'/login'" 
-    mat-icon-button class="example-icon favorite-icon " aria-label="Example icon-button with heart icon">
-      <mat-icon>login</mat-icon> 
+    *ngIf="!isUserLoggedIn"
+    [routerLink]="'/login'"  mat-button
+    mat-icon-button class="example-icon favorite-icon ml20" aria-label="Example icon-button with heart icon">
+      <!-- <mat-icon>login</mat-icon>  -->
+      Login       
     </a>
-    <a 
-    *ngIf="loginService.isUserLoggedIn()"
-    
+    <a  
+     *ngIf="isUserLoggedIn && user!=null"
+     mat-button
     mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    {{loginService.getUserDetailsFromLocalStorage().username}}  
+    {{loginService.getUserDetailsFromLocalStorage().firstName}}   
     
     </a>
     
     <a 
-    *ngIf="loginService.isUserLoggedIn()"
+    *ngIf="isUserLoggedIn && user!=null"
     (click)="logout()"
-    mat-icon-button class="example-icon favorite-icon " style="margin-left: 50px;" aria-label="Example icon-button with heart icon">
-    
-     <mat-icon>logout</mat-icon>
+    mat-button
+    mat-icon-button class="example-icon favorite-icon ml20"  aria-label="Example icon-button with heart icon">
+    Logout      
+     <!-- <mat-icon>logout</mat-icon> -->
     </a>
   </mat-toolbar>
   
