@@ -1,1 +1,66 @@
-<p>profile works!</p>
+<mat-card *ngIf="user">
+
+ <!-- *ngIf="user"   // for component loads if user not null -->
+    
+    <h3>Your Profile</h3>
+   
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+
+                    <img style="border-radius: 50px;" src="../../../assets/logo.png" alt="logo" width="80" height="80">
+                    <h1>Welcome {{user.firstName}} {{user.lastName}}</h1>
+                   
+                    <div class="row">
+
+
+
+                        <div class="col-md-10 offset-md-1">
+
+
+
+                            <table class="table">
+
+                                <tr>
+                                    <td>Username</td>
+                                    <td>{{ user.username }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Phone number</td>
+                                    <td>{{user.phone}} </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Email</td>
+                                    <td>{{user.email}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Role</td>
+                                    <td>{{user.authorities[0].authority}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Status</td>
+                                    <td>{{user.enabled?"ACTIVE":"NOT ACTIVE"}}</td>
+                                </tr>
+                            </table>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+
+    <mat-card-actions class="text-center">
+        <button mat-raised-button color="primary">Update</button>
+        
+        <button mat-raised-button color="accent">Delete</button>
+    </mat-card-actions>
+
+</mat-card>

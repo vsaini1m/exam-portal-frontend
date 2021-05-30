@@ -1,0 +1,20 @@
+.table{
+    width: 100%;
+    border: .3px solid #e2e2e2;
+    text-align: center;
+    border-collapse: collapse;
+    
+}
+
+
+
+.table tr td{
+    padding: 15px 20px;
+    border: .3px solid #e2e2e2;
+  
+}
+
+tr:hover{
+background-color: #e2e2e2;
+}
+

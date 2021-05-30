@@ -27,3 +27,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body{
 	background-color: #e2e2e2;
 }
+
+
+.p20{
+    padding: 20px;
+}
+
+.pl20{
+    padding-left: 20px;
+}
+
+.pr20{
+    padding-right: 20px;
+}

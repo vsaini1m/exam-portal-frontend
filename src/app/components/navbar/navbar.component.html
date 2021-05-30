@@ -7,21 +7,22 @@
    
     <a 
     *ngIf="!isUserLoggedIn"
-    [routerLink]="'/singup'"  mat-button
+    [routerLink]="'/singup'" 
     mat-icon-button class="example-icon favorite-icon " aria-label="Example icon-button with heart icon">
         <!-- <mat-icon>add_business</mat-icon> -->
         register         
     </a>
     <a 
     *ngIf="!isUserLoggedIn"
-    [routerLink]="'/login'"  mat-button
+    [routerLink]="'/login'" 
     mat-icon-button class="example-icon favorite-icon ml20" aria-label="Example icon-button with heart icon">
       <!-- <mat-icon>login</mat-icon>  -->
-      Login       
+      login       
     </a>
     <a  
      *ngIf="isUserLoggedIn && user!=null"
-     mat-button
+    
+     routerLink="/admin/profile"
     mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     {{loginService.getUserDetailsFromLocalStorage().firstName}}   
     
@@ -30,7 +31,7 @@
     <a 
     *ngIf="isUserLoggedIn && user!=null"
     (click)="logout()"
-    mat-button
+   
     mat-icon-button class="example-icon favorite-icon ml20"  aria-label="Example icon-button with heart icon">
     Logout      
      <!-- <mat-icon>logout</mat-icon> -->
