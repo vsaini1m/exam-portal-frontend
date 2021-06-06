@@ -22,4 +22,11 @@ export class QuizService {
   public addNewQuiz(quizData:any) {
     return this._http.post(`${baseUrl}/quiz/`,quizData);
   }
+
+  /**
+   * deleteQuizById
+   */
+  public deleteQuizById(qid:any) {
+    return this._http.delete(`${baseUrl}/quiz/${qid}`);
+  }
 }

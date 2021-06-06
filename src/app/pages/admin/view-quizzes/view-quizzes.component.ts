@@ -13,7 +13,7 @@ export class ViewQuizzesComponent implements OnInit {
 
   quizzes=[
     {
-      qId:21,
+      qid:21,
       title:"Loading....",
       description:'Loading...',
       maxMarks:'Loading...',
@@ -38,6 +38,35 @@ export class ViewQuizzesComponent implements OnInit {
         Swal.fire("Error !","Error to loading data",'error');
       }
     )
+  }
+
+
+  /**
+   * deleteQuiz
+   */
+  deleteQuiz(qid:any) {
+   Swal.fire({
+     title:'Are you sure',
+     confirmButtonText:'DELETE',
+     showCancelButton:true,
+     icon:'info'
+   }).then((result)=>{
+     if(result.isConfirmed){
+      this._quiz.deleteQuizById(qid).subscribe(
+        (data:any)=>{
+          this.quizzes=this.quizzes.filter((quiz)=>quiz.qid != qid);
+          
+          Swal.fire("Success !","Quiz deleted successfully",'success');
+         
+  
+        },
+        (error:any)=>{
+          console.log(error);
+          Swal.fire("Error !","Quiz Delition operation faild",'error');
+        }
+      )
+     }
+   })
   }
 
 }
