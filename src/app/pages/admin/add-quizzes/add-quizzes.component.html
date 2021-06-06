@@ -4,19 +4,19 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <form>
+                <form (ngSubmit)="formSubmit()">
                     <mat-form-field class="w100" appearance="outline">
                         <mat-label>
                             Entaer Title
                         </mat-label>
-                        <input type="text" name="title" placeholder="Enter here" matInput>
+                        <input type="text"  [(ngModel)]="quizData.title" name="title" placeholder="Enter here" matInput>
                     </mat-form-field>
 
                     <mat-form-field class="w100" appearance="outline">
                         <mat-label>
                             Entaer Description
                         </mat-label>
-                        <textarea name="description" placeholder="Enter here" matInput rows="7">
+                        <textarea name="description"  [(ngModel)]="quizData.description" placeholder="Enter here" matInput rows="7">
                             </textarea>
                     </mat-form-field>
 
@@ -28,7 +28,7 @@
                                 <mat-label>
                                     Maximum marks
                                 </mat-label>
-                                <input type="text" name="maxMax" placeholder="Enter here" matInput>
+                                <input type="number"   [(ngModel)]="quizData.maxMax" name="maxMax" placeholder="Enter here" matInput>
                             </mat-form-field>
 
                         </div>
@@ -38,7 +38,9 @@
                                 <mat-label>
                                     Number of question
                                 </mat-label>
-                                <input type="text" name="numberOfQuestion" placeholder="Enter here" matInput>
+                                <input type="number" name="numberOfQuestion"
+                                [(ngModel)]="quizData.numberOfQuestion" 
+                                placeholder="Enter here" matInput>
                             </mat-form-field>
 
                         </div>
@@ -48,7 +50,7 @@
 
                     <!-- active field -->
 
-                    <mat-slide-toggle class="mt20" [checked]="false" >
+                    <mat-slide-toggle name="active"  [(ngModel)]="quizData.active"  class="mt20" [checked]="false" >
                         Publish
                     </mat-slide-toggle>
 
@@ -56,7 +58,7 @@
 
                     <mat-form-field appearance="outline" class="mt20 w100">
                         <mat-label>Select Category</mat-label>
-                        <mat-select  name="food">
+                        <mat-select  name="category"  [(ngModel)]="quizData.category.cid"  >
                           <mat-option *ngFor="let c of category" [value]="c.cid">
                             {{c.title}} / {{c.description}}
                           </mat-option>
