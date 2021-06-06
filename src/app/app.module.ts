@@ -27,6 +27,8 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategorysComponent } from './pages/admin/view-categorys/view-categorys.component';
 import { AddCategorysComponent } from './pages/admin/add-categorys/add-categorys.component';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import { AddQuizzesComponent } from './pages/admin/add-quizzes/add-quizzes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,9 @@ import { AddCategorysComponent } from './pages/admin/add-categorys/add-categorys
     SidebarComponent,
     WelcomeComponent,
     ViewCategorysComponent,
-    AddCategorysComponent
+    AddCategorysComponent,
+    ViewQuizzesComponent,
+    AddQuizzesComponent
     
   ],
   imports: [

@@ -1,0 +1,31 @@
+<mat-card class="mt10" *ngFor="let q of quizzes">
+
+
+    <mat-card-header>
+        <mat-icon mat-card-avatar>folder</mat-icon>
+        <mat-card-title>
+            {{q.title}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{q.category.title}}
+        </mat-card-subtitle>
+    </mat-card-header>
+   
+    <mat-card-content>
+        <p>{{q.description}}</p>
+    </mat-card-content>
+
+   
+        <button mat-flat-button color="warn">Question</button>
+   
+        <button mat-stroked-button class="ml20" color="warn">Max Marks: {{q.maxMarks}}</button>
+
+        <button mat-stroked-button class="ml20" color="warn">Number of questions: {{q.numberOfQuestions}}</button>
+        <button mat-flat-button class="ml20" color="warn">Update</button>
+
+        <button mat-flat-button class="ml20" color="warn">Attempts</button>
+</mat-card>
+
+<div class="conainer text-center mt20">
+    <button mat-flat-button color="primary">Add new Quiz</button>
+</div>
