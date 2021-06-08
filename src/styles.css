@@ -43,3 +43,11 @@ body{
 .mt10{
     margin-top: 10px;
 }
+.w100{
+    width: 100%;
+}
+.cp{
+   cursor: pointer;
+   font-size: 30px;
+  
+}

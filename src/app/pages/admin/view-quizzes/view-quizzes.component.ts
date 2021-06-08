@@ -16,8 +16,8 @@ export class ViewQuizzesComponent implements OnInit {
       qid:21,
       title:"Loading....",
       description:'Loading...',
-      maxMarks:'Loading...',
-      numberOfQuestions:'loading....',
+      maxMax:'Loading...',
+      numberOfQuestion:'loading....',
       active:'',
       category:{
         title:'Loading.....',
