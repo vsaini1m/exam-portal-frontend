@@ -20,7 +20,7 @@
     </mat-card-content>
 
 
-    <button mat-flat-button color="warn">Question</button>
+    <button mat-flat-button color="warn" [routerLink]="'/admin/question/'+q.qid+'/'+q.title">Question</button>
 
     <button mat-stroked-button class="ml20" color="warn">Max Marks: {{q.maxMax}}</button>
 
