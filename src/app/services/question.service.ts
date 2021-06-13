@@ -14,6 +14,6 @@ export class QuestionService {
    * getQuestionsByQuiz
    */
   public getQuestionsByQuiz(qid:any) {
-    return this._http.get(`${baseUrl}/question/questions/`+qid);
+    return this._http.get(`${baseUrl}/question/questions/all/`+qid);
   }
 }
