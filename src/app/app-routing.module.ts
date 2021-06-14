@@ -75,7 +75,7 @@ const routes: Routes = [
         component:ViewQuestionComponent
       },
       {
-        path:'add-question',
+        path:'add-question/:qid/:qtitle',
         component:AddQuestionComponent
       }
     ]

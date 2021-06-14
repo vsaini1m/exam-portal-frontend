@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { QuestionService } from 'src/app/services/question.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-question',
@@ -7,9 +10,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddQuestionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: ActivatedRoute,
+    private _question:QuestionService) { }
 
-  ngOnInit(): void {
+  qid = "";
+  qtitle="";
+
+
+  question={
+    quiz:{
+      qid:''
+    },
+    content:'',
+    option1:'',
+    option2:'',
+    option3:'',
+    option4:'',
+    answer:''
   }
 
+  ngOnInit(): void {
+
+    this.qid = this._router.snapshot.params.qid;
+    this.qtitle = this._router.snapshot.params.qtitle;
+
+    this.question.quiz['qid']=this.qid;
+
+    
+
+  }
+
+
+  addQuestion(){
+    this._question.addQuestion(this.question).subscribe((data:any)=>{
+      Swal.fire("Success","Question addedd to "+this.qtitle+" successfully",'success').then((e)=>{
+
+      })
+    }),
+    (error:any)=>{
+      Swal.fire("Faild","Question proccess faild",'error');
+        
+    }
+  }
 }

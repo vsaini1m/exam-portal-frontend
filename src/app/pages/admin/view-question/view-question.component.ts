@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 
 @Component({
@@ -10,7 +10,8 @@ import { QuestionService } from 'src/app/services/question.service';
 export class ViewQuestionComponent implements OnInit {
 
   constructor(private _rout:ActivatedRoute
-    ,private _question:QuestionService) { }
+    ,private _question:QuestionService,
+    private _router:Router) { }
 
   qid= "";
   qtitle="";
@@ -42,5 +43,7 @@ export class ViewQuestionComponent implements OnInit {
 
 
   }
+
+
 
 }
