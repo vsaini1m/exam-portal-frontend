@@ -13,7 +13,7 @@
             <mat-card *ngFor="let q of question; let i=index" class="mt20">
                 <mat-card-content>
                     <b>Q. {{i+1}} )</b> <span class="ml20" [innerHTML]="q.content"></span>
-
+                    
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
@@ -38,6 +38,15 @@
                     </div>
 
                     <b class="mt20">Correct Answer: </b>{{q.answer}}
+                    
+
+                   
+                        
+                        <mat-icon color="primary" 
+                        class="mt20 ml20" style="cursor: pointer;font-size: 25px;" mat-raised-button color="primary" (click)="delete(q.quesId)" >delete</mat-icon>
+                    
+
+
                 </mat-card-content>
             </mat-card>
         </div>

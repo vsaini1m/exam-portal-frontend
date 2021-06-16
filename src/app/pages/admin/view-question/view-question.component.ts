@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-view-question',
@@ -16,6 +18,7 @@ export class ViewQuestionComponent implements OnInit {
   qid= "";
   qtitle="";
   question=[{
+    quesId:'',
     content:'',
     option1:'',
     option2:'',
@@ -45,5 +48,30 @@ export class ViewQuestionComponent implements OnInit {
   }
 
 
+  delete(quesId:any){
+   
+    Swal.fire({
+      title:'Are you sure want to delete',
+      confirmButtonText:'Yes Delete',
+      showCancelButton:true,
+      icon:'info'
+    }).then((result)=>{
+      if(result.isConfirmed){
+        this._question.deleteQuestion(quesId).subscribe((data:any)=>{
+         
 
+          
+         this.question= this.question.filter((question:any)=>question.quesId!=quesId);
+        },
+        (error:any)=>{
+          console.log(error)
+        
+      })
+      }
+    })
+   
+   
+   
+
+}
 }
