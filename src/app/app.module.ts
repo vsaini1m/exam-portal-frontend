@@ -34,6 +34,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { ViewQuestionComponent } from './pages/admin/view-question/view-question.component';
+
+import { SidebarComponent as UserSideBar } from './pages/user/sidebar/sidebar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +54,8 @@ import { ViewQuestionComponent } from './pages/admin/view-question/view-question
     AddQuizzesComponent,
     UpdateQuizComponent,
     AddQuestionComponent,
-    ViewQuestionComponent
+    ViewQuestionComponent,
+    UserSideBar
     
   ],
   imports: [

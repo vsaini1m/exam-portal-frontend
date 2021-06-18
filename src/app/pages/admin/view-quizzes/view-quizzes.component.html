@@ -1,7 +1,13 @@
+
+<div class="conainer text-center mt20">
+    <button mat-flat-button color="primary" routerLink="/admin/add-quizzes">Add new Quiz <mat-icon>add</mat-icon>
+    </button>
+</div>
+
 <mat-card class="mt10" *ngFor="let q of quizzes">
     <mat-card-header>
         <mat-icon mat-card-avatar>folder</mat-icon>
-       
+
         <mat-card-title>
             <span> {{q.title}} </span>
         </mat-card-title>
@@ -11,7 +17,7 @@
         <mat-card-subtitle>
             {{q.category.title}}
         </mat-card-subtitle>
-   
+
     </mat-card-header>
 
     <mat-card-content>
@@ -35,7 +41,3 @@
 
 
 </mat-card>
-<!-- //rout to new quiz -->
-<div class="conainer text-center mt20">
-    <button mat-flat-button color="primary" routerLink="/admin/add-quizzes">Add new Quiz  <mat-icon>add</mat-icon> </button>
-</div>
