@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 import { QuizService } from 'src/app/services/quiz.service';
 import Swal from 'sweetalert2';
@@ -30,12 +31,13 @@ export class AddQuizzesComponent implements OnInit {
       cid:''
     }
   };
-  constructor(private _category:CategoryService,private _quiz:QuizService) { }
+  constructor(private _category:CategoryService,private _quiz:QuizService
+    ,private _router:Router) { }
 
   ngOnInit(): void {
     this._category.categories().subscribe((data:any)=>{
       this.category=data;
-      console.log(this.category);
+     
     },
     (error)=>{
       console.log(error);
@@ -50,7 +52,7 @@ export class AddQuizzesComponent implements OnInit {
    */
   public formSubmit() {
     this._quiz.addNewQuiz(this.quizData).subscribe((data:any)=>{
-      console.log(this.quizData);
+      this._router.navigate(['/admin/quizzes']);
 
       Swal.fire("Success","Quizz added successfully","success");
     },

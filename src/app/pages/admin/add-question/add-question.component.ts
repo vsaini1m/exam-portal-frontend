@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import Swal from 'sweetalert2';
 
@@ -11,7 +11,8 @@ import Swal from 'sweetalert2';
 export class AddQuestionComponent implements OnInit {
 
   constructor(private _router: ActivatedRoute,
-    private _question:QuestionService) { }
+    private _question:QuestionService,
+    private _rout:Router) { }
 
   qid = "";
   qtitle="";
@@ -44,7 +45,8 @@ export class AddQuestionComponent implements OnInit {
   addQuestion(){
     this._question.addQuestion(this.question).subscribe((data:any)=>{
       Swal.fire("Success","Question addedd to "+this.qtitle+" successfully",'success').then((e)=>{
-
+        this._rout.navigate(['/admin/question/'+this.qid+'/'+this.qtitle]);
+      
       })
     }),
     (error:any)=>{

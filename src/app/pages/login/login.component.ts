@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
 
               //usr dash
             //  window.location.href = "/user-dashboard";
-            this.router.navigate(['user-dashboard']);
+            this.router.navigate(['user-dashboard/0']);
             this.loginService.loginStatusSubject.next(true);
 
             } else {

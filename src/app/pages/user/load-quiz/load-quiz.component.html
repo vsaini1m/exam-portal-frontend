@@ -1,0 +1,54 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+       
+        <div class="row" *ngIf="quizzess">
+           
+            <div class="col-md-4"   *ngFor="let q of quizzess">
+               
+                <mat-card class="mt20">
+                    <mat-card-header>
+                        
+                            <mat-icon mat-card-avatar>quiz</mat-icon>
+                     
+                        <mat-card-title>
+                            {{q.title}}
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            {{q.category.title}}
+                        </mat-card-subtitle>
+                    </mat-card-header>
+
+                    <!-- show only 1 line if content greter then after three line "truncate"..... -->
+                        <p class="truncate">{{q.description}}</p>
+
+                    <mat-card-content>
+                        
+                    </mat-card-content>
+                    
+
+                    <button mat-button color="primary">
+                        View
+                    </button>
+                    
+                    <button mat-raised-button class="ml20" color="primary">
+                        Start
+                    </button>
+
+                    <button mat-raised-button class="ml20" color="primary">
+                        Max Max :
+                    </button>
+
+                    <button mat-raised-button class="ml20" color="primary">
+                        Questions :
+                    </button>
+
+                </mat-card>
+
+
+            </div>
+          
+        </div>
+
+
+    </div>
+</div>
