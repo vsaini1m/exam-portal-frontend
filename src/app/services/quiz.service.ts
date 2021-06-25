@@ -54,4 +54,20 @@ qid:any   */
     return this._http.get(`${baseUrl}/quiz/category/${cid}`)
     
   }
+
+
+
+  /**
+   * getActiveQuizzes
+   */
+  public getActiveQuizzes() {
+    return this._http.get(`${baseUrl}/quiz/active`)
+  }
+
+  /**
+   * getActiveQuizzesByCategory
+   */
+  public getActiveQuizzesByCategory(cid:any) {
+    return this._http.get(`${baseUrl}/quiz/category/active/${cid}`)
+  }
 }
