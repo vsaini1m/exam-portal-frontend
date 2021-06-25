@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-navbar',
@@ -12,8 +13,12 @@ export class NavbarComponent implements OnInit {
   user = null;
 
 
-  constructor(public loginService: LoginService,) { }
+  constructor(public loginService: LoginService,private _bottomSheet: MatBottomSheet) { }
 
+  openBottomSheet(): void {
+    this._bottomSheet.open(BottomSheetOverviewExampleSheet);
+  }
+  
   ngOnInit(): void {
     this.isUserLoggedIn = this.loginService.isUserLoggedIn();
     this.user = this.loginService.getUserDetailsFromLocalStorage();
@@ -37,4 +42,20 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+}
+@Component({
+  selector: 'bottom-sheet-overview-example-sheet',
+  templateUrl: 'bottom-sheet-overview-example-sheet.html',
+  styleUrls: ['./navbar.component.css']
+})
+export class BottomSheetOverviewExampleSheet{
+  constructor(private _bottomSheetRef: MatBottomSheetRef<BottomSheetOverviewExampleSheet>) {
+   
+    
+  }
+
+  openLink(event: MouseEvent): void {
+    this._bottomSheetRef.dismiss();
+    event.preventDefault();
+  }
 }

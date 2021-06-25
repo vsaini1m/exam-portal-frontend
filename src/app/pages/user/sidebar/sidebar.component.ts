@@ -26,6 +26,8 @@ export class SidebarComponent implements OnInit {
 
     this._cat.categories().subscribe((data:any)=>{
       this.categories=data;
+
+      console.log(this.categories)
     },
     (error:any)=>{
       console.log(error);

@@ -38,6 +38,8 @@ import { ViewQuestionComponent } from './pages/admin/view-question/view-question
 import { SidebarComponent as UserSideBar } from './pages/user/sidebar/sidebar.component';
 
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,7 +78,9 @@ import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
     MatIconModule,
     MatListModule,
     MatSlideToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    MatBottomSheetModule,
+    MatSidenavModule,
   ],
   providers: [authIntercepterProviders],
   bootstrap: [AppComponent]

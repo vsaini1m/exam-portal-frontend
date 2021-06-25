@@ -7,3 +7,25 @@
   .pl20{
     padding-left: 20px;
   }
+
+  .list{
+  
+    color: black;
+   
+    text-align: start;
+    text-decoration:none;
+    font-size: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  div{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    
+
+  }
+
+  div:hover{
+    background-color: #e2e2e2;
+  }

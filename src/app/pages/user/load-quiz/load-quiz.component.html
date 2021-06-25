@@ -1,15 +1,15 @@
 <div class="bootstrap-wrapper">
     <div class="container-fluid">
-       
+
         <div class="row" *ngIf="quizzess">
-           
-            <div class="col-md-4"   *ngFor="let q of quizzess">
-               
+
+            <div class="col-md-4" *ngFor="let q of quizzess">
+
                 <mat-card class="mt20">
                     <mat-card-header>
-                        
-                            <mat-icon mat-card-avatar>quiz</mat-icon>
-                     
+
+                        <mat-icon mat-card-avatar>quiz</mat-icon>
+
                         <mat-card-title>
                             {{q.title}}
                         </mat-card-title>
@@ -19,34 +19,45 @@
                     </mat-card-header>
 
                     <!-- show only 1 line if content greter then after three line "truncate"..... -->
-                        <p class="truncate">{{q.description}}</p>
+                    <p class="truncate">{{q.description}}</p>
 
                     <mat-card-content>
-                        
+
                     </mat-card-content>
-                    
 
-                    <button mat-button color="primary">
-                        View
-                    </button>
-                    
-                    <button mat-raised-button class="ml20" color="primary">
-                        Start
-                    </button>
+                    <mat-card-actions>
+                        <button mat-button color="primary">
+                            View
+                        </button>
 
-                    <button mat-raised-button class="ml20" color="primary">
-                        Max Max :
-                    </button>
+                        <button mat-raised-button color="primary">
+                            Start
+                        </button>
 
-                    <button mat-raised-button class="ml20" color="primary">
-                        Questions :
-                    </button>
+                        <button mat-stroked-button color="primary">
+                           M.M : {{q.maxMax}}
+                        </button>
+
+                        <button mat-stroked-button color="primary">
+                            Q. {{q.numberOfQuestion}}
+                        </button>
+                    </mat-card-actions>
 
                 </mat-card>
 
 
             </div>
-          
+
+            <div class="col-md-12 mt20" *ngIf="quizzess.length == 0">
+                <mat-card>
+                    <mat-card-content>
+                        <h1>No data in this category
+                           
+                        </h1>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
         </div>
 
 

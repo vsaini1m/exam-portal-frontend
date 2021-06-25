@@ -17,15 +17,37 @@ export class LoadQuizComponent implements OnInit {
     quizzess:any;
 
   ngOnInit(): void {
-    this.catId=this.rout.snapshot.params.catId;
+    
+   
+      //this subscription for every time will  run  onit when link will change
+    this.rout.params.subscribe((params)=>{
+      this.catId=params.catId;
 
 
-    if(this.catId==0){
-      //load all quiz
-      this._quiz.getQuizzes().subscribe((data)=>{
+
+
+      if(this.catId==0){
+        //load all quiz
+        this._quiz.getQuizzes().subscribe((data)=>{
+          this.quizzess=data;
+
+          
+          
+        },
+        (error:any)=>{
+            //error 
+            alert("error in loading all quizzess")
+        })
+
+    }else{
+
+      this.quizzess=null;
+      console.log("load specific quiz")
+
+      this._quiz.getQuizzessByCategory(this.catId).subscribe((data)=>{
         this.quizzess=data;
 
-        console.log(this.quizzess)
+        
         
       },
       (error:any)=>{
@@ -33,9 +55,12 @@ export class LoadQuizComponent implements OnInit {
           alert("error in loading all quizzess")
       })
 
-    }else{
-      console.log("load specific quiz")
+      
     }
+    })
+
+
+    
   }
 
 }
