@@ -40,6 +40,7 @@ import { SidebarComponent as UserSideBar } from './pages/user/sidebar/sidebar.co
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import { PrestartQuizComponent } from './pages/user/prestart-quiz/prestart-quiz.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,8 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
     AddQuestionComponent,
     ViewQuestionComponent,
     UserSideBar,
-    LoadQuizComponent
+    LoadQuizComponent,
+    PrestartQuizComponent
     
   ],
   imports: [

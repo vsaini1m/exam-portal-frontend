@@ -14,6 +14,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SingupComponent } from './pages/singup/singup.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import { PrestartQuizComponent } from './pages/user/prestart-quiz/prestart-quiz.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/admin.guard';
 
@@ -89,6 +90,10 @@ const routes: Routes = [
       {
         path:':catId',
         component:LoadQuizComponent
+      },
+      {
+        path:'instructions/:qid',
+        component:PrestartQuizComponent
       }
     ]
   }
