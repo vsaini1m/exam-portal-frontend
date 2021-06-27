@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuizService } from 'src/app/services/quiz.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-prestart-quiz',
@@ -10,7 +11,8 @@ import { QuizService } from 'src/app/services/quiz.service';
 export class PrestartQuizComponent implements OnInit {
 
   constructor(private _rout:ActivatedRoute,
-    private _quiz:QuizService) { }
+    private _quiz:QuizService,
+    private _router:Router) { }
 
   qid:any;
 
@@ -30,7 +32,26 @@ console.log(data)
    )
 
 
-
+   
   }
+/**
+ * startQuiz
+ */
+public startQuiz() {
+
+  Swal.fire({
+    title:'Do you want to start Test',
+    showCancelButton:true,
+    confirmButtonText:"Yes, Start quiz"
+  }).then((result)=>{
+    if(result.isConfirmed){
+      this._router.navigate(["/start/"+this.qid])
+      
+    }
+  })
+  
+}
+
+  
 
 }

@@ -41,6 +41,7 @@ import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { PrestartQuizComponent } from './pages/user/prestart-quiz/prestart-quiz.component';
+import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +63,8 @@ import { PrestartQuizComponent } from './pages/user/prestart-quiz/prestart-quiz.
     ViewQuestionComponent,
     UserSideBar,
     LoadQuizComponent,
-    PrestartQuizComponent
+    PrestartQuizComponent,
+    StartQuizComponent
     
   ],
   imports: [
