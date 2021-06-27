@@ -1,4 +1,4 @@
-<div class="bootstrap-wrapper">
+<div class="bootstrap-wrapper" *ngIf="!isSubmit">
     <div class="container-fluid">
        <div class="row">
         <div class="col-md-2">
@@ -10,36 +10,44 @@
 
             <ng-container *ngIf="question">
                 <h1 class="mt20"> {{question[0].quiz.title}} </h1>
+                
 
 
                 <mat-card *ngFor="let q of question; let i=index" class="mt20">
                    <mat-card-content>
+
+                   
                     <p> <b>Question {{i+1}}.</b>
                         <span class="ml20" [innerHTML]="q.content"></span>
                     </p>  
 
                        <mat-divider></mat-divider>
-
+                     
                        <div class="row mt20 cpp">
                            <div class="col-md-6">
-                              1)  <input type="radio" [value]="q.option1" 
-                               [name]="i"><b> {{q.option1}} </b> 
+                              1)  <input type="radio" [value]="q.option1"
+                              [name]="q.quesId"
+                               [(ngModel)]="q.givenAnswer"><b> {{q.option1}} </b> 
                            </div>
                            <div class="col-md-6">
                               2) <input type="radio" [value]="q.option2" 
-                              [name]="i"><b> {{q.option2}} </b> 
+                              [name]="q.quesId"
+                              [(ngModel)]="q.givenAnswer"><b> {{q.option2}} </b> 
                            </div>
                        </div>
 
 
                        <div class="row mt20 cpp">
                         <div class="col-md-6">
-                           3) <input type="radio" [value]="q.option3" 
-                           [name]="i"><b> {{q.option3}} </b> 
+                           3) <input type="radio"
+                            [value]="q.option3" 
+                            [name]="q.quesId"
+                           [(ngModel)]="q.givenAnswer"><b> {{q.option3}} </b> 
                         </div>
                         <div class="col-md-6">
                            4) <input type="radio" [value]="q.option4" 
-                           [name]="i"><b> {{q.option4}} </b> 
+                           [name]="q.quesId"
+                           [(ngModel)]="q.givenAnswer"><b> {{q.option4}} </b> 
                         </div>
                     </div>
                    </mat-card-content>
@@ -51,7 +59,7 @@
 
 
                 <div class="conainer text-center mt20">
-                    <button mat-raised-button color="primary">Submit Quiz</button>
+                    <button mat-raised-button color="primary" (click)="submitQuiz()">Submit Quiz</button>
                 </div>
             </ng-container>
         </div>
@@ -60,5 +68,35 @@
 
         </div>
        </div>
+    </div>
+</div>
+
+
+<div class="bootstrap-wrapper mt20" *ngIf="isSubmit">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+
+            <mat-card class="text-center">
+
+                <mat-card-header>
+                    <mat-card-title>
+                        Quiz Result
+                    </mat-card-title>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <h1>Marks you Got :{{marksGot}}</h1>
+
+                    <h1>Correct Answer: {{correctAnswer}}</h1>
+
+                    <h1>You attempted {{attempted}} question </h1>
+                </mat-card-content>
+
+                
+                <div class="conainer text-center mt20">
+                    <button mat-raised-button color="primary" routerLink="/user-dashboard/0" >Home</button>
+                </div>
+            </mat-card>
+        </div>
     </div>
 </div>
