@@ -26,7 +26,7 @@ export class PrestartQuizComponent implements OnInit {
 console.log(data)
 
    }),
-   (error)=>{
+   (error)=>{ 
      console.log("faild to load quiz")
    }
    )
