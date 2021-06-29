@@ -42,6 +42,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { PrestartQuizComponent } from './pages/user/prestart-quiz/prestart-quiz.component';
 import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,6 +86,7 @@ import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component
     MatSelectModule,
     MatBottomSheetModule,
     MatSidenavModule,
+    MatProgressSpinnerModule,
   ],
   providers: [authIntercepterProviders],
   bootstrap: [AppComponent]
