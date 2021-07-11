@@ -110,7 +110,7 @@ export class StartQuizComponent implements OnInit {
         (data:any)=>{
           console.log(data);
 
-          this.marksGot=data.marksGot;
+          this.marksGot=parseFloat(Number(data.marksGot).toFixed(2));
           this.correctAnswer=data.correctAnswers;
           this.attempted=data.attempted;
           this.isSubmit=true;
@@ -166,4 +166,8 @@ export class StartQuizComponent implements OnInit {
     return `${m} min : ${s} sec.`
   }
 
+
+  printPage(){
+    window.print();
+  }
 }

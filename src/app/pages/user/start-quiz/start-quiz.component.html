@@ -1,9 +1,22 @@
 <div class="bootstrap-wrapper" *ngIf="!isSubmit">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2">
-                <h1>Instructions</h1>
+            <div class="col-md-2 mt20">
+               
+                <mat-card>
+                    <mat-card-content>
+                        <h1>Instructions</h1>
 
+
+
+                    <ol>
+                        <li>Do not refresh tha page otherwise you will get new question in this exam.</li>
+                        <li>Don't minimize the browser's window.</li>
+                        <li>Don't switch the tab.</li>
+                    </ol>
+                    </mat-card-content>
+                </mat-card>
+                
             </div>
 
             <div class="col-md-8">
@@ -113,6 +126,8 @@
 
                 <div class="conainer text-center mt20">
                     <button mat-raised-button color="primary" routerLink="/user-dashboard/0">Home</button>
+               
+                    <button class="ml20" (click)="printPage()" mat-raised-button color="primary" >Print page</button>
                 </div>
             </mat-card>
         </div>
