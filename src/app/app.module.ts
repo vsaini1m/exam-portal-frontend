@@ -43,6 +43,7 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { PrestartQuizComponent } from './pages/user/prestart-quiz/prestart-quiz.component';
 import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,6 +88,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatBottomSheetModule,
     MatSidenavModule,
     MatProgressSpinnerModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true
+    })
   ],
   providers: [authIntercepterProviders],
   bootstrap: [AppComponent]
