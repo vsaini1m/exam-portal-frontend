@@ -42,4 +42,11 @@ export class QuestionService {
    public getQuestionsByQuizforUser(qid:any) {
     return this._http.get(`${baseUrl}/question/quiz/`+qid);
   }
+
+  /**
+   * submitExam
+   */
+  public submitExam(questions:any) {
+    return this._http.post(`${baseUrl}/question/submit-exam`,questions);
+  }
 }

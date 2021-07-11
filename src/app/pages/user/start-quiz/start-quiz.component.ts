@@ -64,9 +64,7 @@ export class StartQuizComponent implements OnInit {
 
       this.countdown();
 
-      this.question.forEach((q: any) => {
-        q['givenAnswer'] = '';
-      });
+     
 
 
 
@@ -98,7 +96,7 @@ export class StartQuizComponent implements OnInit {
       if (result.isConfirmed) {
 
 
-        this.calculateSubmit();
+        this.calculateSubmitForBackend();
 
 
 
@@ -107,9 +105,23 @@ export class StartQuizComponent implements OnInit {
   }
 
 
+  calculateSubmitForBackend(){
+      this._questions.submitExam(this.question).subscribe(
+        (data:any)=>{
+          console.log(data);
 
+          this.marksGot=data.marksGot;
+          this.correctAnswer=data.correctAnswers;
+          this.attempted=data.attempted;
+          this.isSubmit=true;
+        },
+        (error)=>{
+          console.log(error)
+        }
+      )
+  }
 
-  calculateSubmit() {
+  calculateSubmitForFrontEnd() {
     this.isSubmit = true;
     this.question.forEach((q: any) => {
 
@@ -138,7 +150,7 @@ export class StartQuizComponent implements OnInit {
   countdown(){
    let t:any= window.setInterval(()=>{
       if(this.timer<=0){
-        this.calculateSubmit();
+        this.calculateSubmitForBackend();
         clearInterval(t);
       }else{
         this.timer--;
